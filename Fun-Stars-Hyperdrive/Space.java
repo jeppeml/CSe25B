@@ -33,6 +33,13 @@ public class Space extends World
         if(Greenfoot.isKeyDown("S")){
             starY += moveSpeed;
         }
+        
+        // Check if keypressed xy is out of game area
+        if(starX>getWidth())  starX = getWidth();
+        if(starY>getHeight()) starY= getHeight();
+        if(starY<0) starY=0;
+        if(starX<0) starX=0;
+
     }
     
     public void spawnStars(int starsPerSpawn){
