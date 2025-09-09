@@ -8,15 +8,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class PlayerShip extends Actor
 {
-    /**
-     * Act - do whatever the PlayerShip wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    private String shipName = "";
+    
     public void act()
     {
         if(isTouching(Enemy.class)){
             EndWorld end = new EndWorld();
             Greenfoot.setWorld(end);
         }
+    }
+    
+    public void setShipName(String name){
+        shipName = name;
     }
 }

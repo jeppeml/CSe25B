@@ -15,15 +15,18 @@ public class TeddyMissile extends SmoothMover
     public void act()
     {
         move(1);
+        
+        Space sWorld = (Space)getWorld();
         if(isAtEdge()){
-            getWorld().removeObject(this);
+            sWorld.removeObject(this);
         }
 
         Actor e = getOneIntersectingObject(Enemy.class);
         
         if(e != null){
-            getWorld().removeObject(e);
-            getWorld().removeObject(this);
+            sWorld.removeObject(e);
+            sWorld.enemyHasBeenKilled();
+            sWorld.removeObject(this);
         }
 
     }
