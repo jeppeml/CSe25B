@@ -1,11 +1,14 @@
 #Greenfoot project file
 class.Orb.image=beeper.png
+dependency1.from=MyWorld
+dependency1.to=Orb
+dependency1.type=UsesDependency
 editor.fx.0.height=900
 editor.fx.0.width=1440
 editor.fx.0.x=0
 editor.fx.0.y=0
 height=851
-package.numDependencies=0
+package.numDependencies=1
 package.numTargets=2
 project.charset=UTF-8
 publish.hasSource=false
@@ -38,5 +41,5 @@ target2.y=0
 version=3.1.0
 width=1212
 world.lastInstantiated=MyWorld
-xPosition=59
+xPosition=90
 yPosition=25
