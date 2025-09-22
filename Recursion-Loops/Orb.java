@@ -1,15 +1,9 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class Orb here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Orb extends Actor
 {
-    private int timeToBirth = Greenfoot.getRandomNumber(20); 
-    private int timeToLive = 20;
+    private int timeToBirth = 10; 
+    private int timeToLive = 120;
     
     public Orb(){
         turn(Greenfoot.getRandomNumber(360));
@@ -25,13 +19,12 @@ public class Orb extends Actor
     }
     public void act()
     {
-        
-        
         timeToBirth--; // increment varible by one
         if (timeToBirth<1){
             getWorld().addObject(new Orb(), getX(), getY());
-            timeToBirth = 15; 
+            timeToBirth = Greenfoot.getRandomNumber(1440); 
         }
+        
         
         move(5);
         

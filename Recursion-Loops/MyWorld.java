@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-
+    private double speed = 50;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -30,5 +30,10 @@ public class MyWorld extends World
         }
         
         
+    }
+    
+    public void act(){
+        speed = speed + .01;
+        Greenfoot.setSpeed((int)speed);
     }
 }
