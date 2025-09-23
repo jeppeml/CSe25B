@@ -38,9 +38,14 @@ public class HelloController {
         String info = "This is the info I need";
         SecondController sc = fxmlLoader.getController();
         sc.setInfo(info);
+        sc.setParentController(this);
         Stage stage = new Stage();
         stage.setTitle("RHELLOOOO!");
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void sendInfo(String info) {
+        welcomeText.setText("New info:" + info);
     }
 }
