@@ -21,6 +21,7 @@ public class HelloController {
 
     public HelloController(){
         dataModel = new DataModel();
+
     }
 
     @FXML
