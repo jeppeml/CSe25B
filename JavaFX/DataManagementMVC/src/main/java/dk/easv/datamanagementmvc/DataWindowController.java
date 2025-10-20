@@ -2,12 +2,14 @@ package dk.easv.datamanagementmvc;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import java.util.List;
 
 import java.util.ArrayList;
 
 public class DataWindowController {
     @FXML
     private Label txtName;
+    List l;
 
     private DataModel dataModel;
 
