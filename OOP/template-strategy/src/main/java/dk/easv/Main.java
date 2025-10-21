@@ -1,13 +1,14 @@
 package dk.easv;
 
 import dk.easv.strategy.Context;
+import dk.easv.template.Cricket;
 import dk.easv.template.Football;
 import dk.easv.template.Game;
 
 public class Main {
     public static void main(String[] args) {
         // template pattern
-        Game game = new Football();
+        Game game = new Cricket();
         game.initialize();
         game.startGame();
         for (int i = 0; i < 10; i++) {
