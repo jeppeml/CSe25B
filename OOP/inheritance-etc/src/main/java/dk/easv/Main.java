@@ -2,6 +2,10 @@ package dk.easv;
 
 import dk.easv.be.*;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -24,6 +28,8 @@ public class Main {
 
         Soundmaking someSoundmakingThing = new Seagull();
         someSoundmakingThing.makeSound();
+
+        List list = new LinkedList<>(); // Polymorphism and indirection
 
         System.out.println("Saluton miaj amikoj, renkonti");
     }
