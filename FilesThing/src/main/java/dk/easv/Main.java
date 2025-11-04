@@ -24,9 +24,9 @@ public class Main {
             System.out.println(s);
         }
 
-        for (int i = 0; i < 10; i++) {
-            System.out.println("Bell: " + (char)7);
-            Thread.sleep(2000);
+        for (int i = 0; i < 255; i++) {
+            System.out.println("Ascii: " + i  + "  char: " + (char)i);
+            //Thread.sleep(2000);
         }
 
 
