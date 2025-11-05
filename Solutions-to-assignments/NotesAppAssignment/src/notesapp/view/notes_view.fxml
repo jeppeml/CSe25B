@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="notesapp.controller.NotesController"
+      alignment="CENTER">
+
+    <HBox spacing="10">
+        <Button text="New" onAction="#handleNew"/>
+        <Button text="Open" onAction="#handleOpen"/>
+        <Button text="Save" onAction="#handleSave"/>
+    </HBox>
+
+    <TextArea fx:id="textArea" prefRowCount="15" prefColumnCount="40"
+              promptText="Write your notes here..."/>
+    <Label fx:id="statusLabel" text="Ready" />
+</VBox>
