@@ -1,0 +1,1 @@
+![image of the 3 layered architecture](3-layered-structure.jpeg)
