@@ -1,5 +1,6 @@
 package dk.easv.database3layered.gui;
 
+import dk.easv.database3layered.be.Dog;
 import dk.easv.database3layered.be.DogOwner;
 import dk.easv.database3layered.bll.Logic;
 import dk.easv.database3layered.exceptions.DogException;
@@ -25,12 +26,21 @@ public class HelloController {
 
         // Get all dog owners and write them to screen
         List<DogOwner> owners = null;
+        List<Dog> dogs = null;
         try {
             owners = logic.getAllOwners();
             txtOutput.clear();
             for (DogOwner owner : owners) {
                 txtOutput.appendText(owner.toString() + "\n");
+                dogs = owner.getDogs();
+                txtOutput.appendText("\nDOGS:\n");
+                for (Dog dog : dogs) {
+                    txtOutput.appendText(dog.toString() + "\n");
+                }
+                txtOutput.appendText("\n\n");
             }
+
+
         } catch (DogException e) {
             welcomeText.setText(e.getMessage());
             txtOutput.clear();
