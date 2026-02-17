@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="gametradedemo.gui.MainViewController"
+            prefWidth="850" prefHeight="650">
+
+    <top>
+        <VBox spacing="10">
+            <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+
+            <Label text="Game Trade Demo — Transactions" style="-fx-font-weight: bold;">
+                <font><Font size="18"/></font>
+            </Label>
+
+            <HBox fx:id="buttonBar" spacing="10" alignment="CENTER_LEFT">
+                <Button text="Trade WITHOUT Transaction" onAction="#onTradeWithoutTransaction"
+                        style="-fx-background-color: #ff6b6b; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                <Button text="Trade WITH Transaction" onAction="#onTradeWithTransaction"
+                        style="-fx-background-color: #51cf66; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                <Button text="Batch Insert" onAction="#onBatchInsert"
+                        style="-fx-background-color: #339af0; -fx-text-fill: white;"/>
+                <Button text="Reset" onAction="#onReset"/>
+                <Separator orientation="VERTICAL" prefHeight="25"/>
+                <CheckBox fx:id="chkCrash" text="Simulate crash after step 2" selected="true"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="10">
+            <padding><Insets top="0" right="10" bottom="10" left="10"/></padding>
+
+            <Label text="Players" style="-fx-font-weight: bold;"/>
+            <TableView fx:id="tablePlayers" prefHeight="120">
+                <columns>
+                    <TableColumn fx:id="columnPlayerName" text="Player" prefWidth="200"/>
+                    <TableColumn fx:id="columnGold" text="Gold" prefWidth="100"/>
+                </columns>
+            </TableView>
+
+            <Label text="Inventory" style="-fx-font-weight: bold;"/>
+            <TableView fx:id="tableInventory" prefHeight="180">
+                <columns>
+                    <TableColumn fx:id="columnOwner" text="Owner" prefWidth="150"/>
+                    <TableColumn fx:id="columnItem" text="Item" prefWidth="200"/>
+                    <TableColumn fx:id="columnQuantity" text="Qty" prefWidth="60"/>
+                </columns>
+            </TableView>
+
+            <Label text="Log" style="-fx-font-weight: bold;"/>
+            <TextArea fx:id="txtLog" prefHeight="200" editable="false"
+                      style="-fx-font-family: monospace;"/>
+        </VBox>
+    </center>
+
+</BorderPane>

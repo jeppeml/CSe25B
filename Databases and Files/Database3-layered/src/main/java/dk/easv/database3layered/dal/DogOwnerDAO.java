@@ -13,7 +13,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DogOwnerDAO {
+public class DogOwnerDAO implements IDogOwnerDAO {
     ConnectionManager conMan = new ConnectionManager();
 
     public List<DogOwner> getAllOwners() throws DogException {

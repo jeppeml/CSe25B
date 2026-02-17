@@ -3,6 +3,7 @@ package dk.easv.database3layered.gui;
 import dk.easv.database3layered.be.Dog;
 import dk.easv.database3layered.be.DogOwner;
 import dk.easv.database3layered.bll.Logic;
+import dk.easv.database3layered.dal.DogOwnerDAO;
 import dk.easv.database3layered.exceptions.DogException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -13,11 +14,10 @@ import java.util.List;
 public class HelloController {
     @FXML
     private TextArea txtOutput;
-
     @FXML
     private Label welcomeText;
 
-    private Logic logic = new Logic();
+    private Logic logic = new Logic(new DogOwnerDAO());
 
     @FXML
     protected void onHelloButtonClick() {
