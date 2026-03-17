@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="dk.sea.sortingvisualizer.gui.SortingController"
+            prefWidth="1000" prefHeight="700">
+
+    <top>
+        <VBox spacing="8">
+            <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Algorithm:"/>
+                <ComboBox fx:id="cmbAlgorithm" prefWidth="160"/>
+                <Label text="Entity:"/>
+                <ComboBox fx:id="cmbEntity" prefWidth="130"/>
+                <Label text="Size:"/>
+                <Spinner fx:id="spnSize" prefWidth="80"/>
+                <Button text="Generate" onAction="#onGenerate"/>
+                <Button text="Reset" onAction="#onReset"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <StackPane fx:id="visualizationPane">
+            <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+        </StackPane>
+    </center>
+
+    <bottom>
+        <VBox spacing="8">
+            <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+            <HBox spacing="10" alignment="CENTER">
+                <Button text="&lt; Step Back" onAction="#onStepBack"/>
+                <Button text="Step Forward &gt;" onAction="#onStepForward"/>
+                <Button fx:id="btnPlayPause" text="Play" onAction="#onPlayPause"/>
+                <Label text="Speed:"/>
+                <Slider fx:id="sldSpeed" min="10" max="1000" value="200"
+                        prefWidth="150" showTickLabels="true" showTickMarks="true"
+                        majorTickUnit="200"/>
+                <Label text="ms"/>
+            </HBox>
+            <HBox spacing="20" alignment="CENTER">
+                <Label fx:id="lblComparisons" text="Comparisons: 0"/>
+                <Label fx:id="lblSwaps" text="Swaps: 0"/>
+                <Label fx:id="lblRemoves" text="Removes: 0"/>
+                <Label fx:id="lblStep" text="Step: 0/0"/>
+                <Label fx:id="lblCapWarning" text="" style="-fx-text-fill: red;"/>
+            </HBox>
+        </VBox>
+    </bottom>
+</BorderPane>
